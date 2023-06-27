@@ -2,7 +2,7 @@
 
 ### This file contains the domain model as well as any references I will use in  my attempt to complete the Bank Challenge
 
-#### The below are some user stories to help me create a domain model (NB: Used ChatGPT to create these user stories quickly):
+#### The below are some user stories to help me create a domain model (NB: Used ChatGPT to create the first 5 user stories quickly):
 
 
 ##### User Story 1:
@@ -12,8 +12,8 @@
 
 **Tests:**
 1. Test that the Transaction's constructor works correctly - Test Done
-2. Test deposit functionality by verifying if a deposit is made this increases the account balance correctly.
-3. Test deposit validation by verifying if the system handles invalid amounts such as negative amount or strings.
+2. Test deposit functionality by verifying if a deposit is made this increases the account balance correctly. - Test Done
+3. Test deposit validation by verifying if the system handles invalid amounts such as negative amounts or strings. - 
 
 
 ##### User Story 2:

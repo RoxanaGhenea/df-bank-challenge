@@ -1,6 +1,6 @@
 import Transaction from "../../src/transaction.js";
 
-describe('Bank Challenge - Transaction Tests', () => {
+describe('Bank Challenge - Transaction Tests:', () => {
 
     it("Should call Transaction's getDepositAmount() method", () => {
         // Given that
