@@ -23,7 +23,7 @@
 
 **Tests:**
 4. Test withdrawal functionality by verifying if a withdrawal is made this decreases the account balance correctly. - Test Done
-5. Test withdrawal validation by checking whether you can withdraw more than the account balance.
+5. Test that you cannot withdraw more than what you have in your account. - Test Done
 6. Test you can set an amount over which you can exceed the account balance.
 7. Test you cannot set a credit limit higher than the bank's allowed limit for your account.
 

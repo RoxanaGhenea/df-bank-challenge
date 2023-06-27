@@ -2,6 +2,7 @@ import transactionType from "./transactionType.js";
 
 class Account {
     #balance = 0.00;
+    #limit = 0.00;
 
     includeTransaction(transaction) {
         if (!this.transactionValidator(transaction)) {
@@ -11,10 +12,10 @@ class Account {
 
     calculationValidator(transaction) {
         if (transaction.getTransactionType() === transactionType.deposit) {
-            return this.#balance += transaction.getAmount();
+            this.#balance += transaction.getAmount();
         }
-        if (transaction.getTransactionType() === transactionType.withdraw) {
-            return this.#balance -= transaction.getAmount();
+        if (transaction.getTransactionType() === transactionType.withdraw && transaction.getAmount() <= this.#limit + this.#balance) {
+            this.#balance -= transaction.getAmount();
         }
     }
 

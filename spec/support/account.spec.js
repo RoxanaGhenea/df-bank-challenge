@@ -43,6 +43,22 @@ describe('Bank Challenge - Account Tests:', () => {
     it("Test if a withdrawal is made this decreases the account balance correctly.", () => {
         // Given that
         const balance = new Account();
+        const deposit = 100.00
+        const withdraw = 50.00;
+        const transactionAmount1 = new Transaction(deposit);
+        const transactionAmount2 = new Transaction(withdraw);
+        // When this happens
+        balance.includeTransaction(transactionAmount1);
+        transactionAmount2.setTransactionType(transactionType.withdraw);
+        balance.includeTransaction(transactionAmount2);
+        const actualBalance = balance.getBalance();
+        // Expect this
+        expect(actualBalance).toEqual(50.00);
+    });
+
+    it("Test that you cannot withdraw more than what you have in your account.", () => {
+        // Given that
+        const balance = new Account();
         const withdraw = 50.00;
         const transactionAmount = new Transaction(withdraw);
         // When this happens
@@ -50,6 +66,7 @@ describe('Bank Challenge - Account Tests:', () => {
         balance.includeTransaction(transactionAmount)
         const actualBalance = balance.getBalance();
         // Expect this
-        expect(actualBalance).toEqual(-50.00);
-    })
+        expect(actualBalance).toEqual(0.00);
+    });
+
 })
