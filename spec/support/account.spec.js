@@ -1,5 +1,6 @@
 import Transaction from "../../src/transaction.js";
 import Account from "../../src/account.js";
+import transactionType from "../../src/transactionType.js";
 
 describe('Bank Challenge - Account Tests:', () => {
 
@@ -38,4 +39,17 @@ describe('Bank Challenge - Account Tests:', () => {
         // Expect this
         expect(actualBalance).toEqual(0.00);
     });
+
+    it("Test if a withdrawal is made this decreases the account balance correctly.", () => {
+        // Given that
+        const balance = new Account();
+        const withdraw = 50.00;
+        const transactionAmount = new Transaction(withdraw);
+        // When this happens
+        transactionAmount.setTransactionType(transactionType.withdraw);
+        balance.includeTransaction(transactionAmount)
+        const actualBalance = balance.getBalance();
+        // Expect this
+        expect(actualBalance).toEqual(-50.00);
+    })
 })

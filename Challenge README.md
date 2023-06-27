@@ -22,10 +22,10 @@
 > So that I can access my funds when needed
 
 **Tests:**
-3. Test withdrawal functionality by verifying if a withdrawal is made this decreases the account balance correctly.
-4. Test withdrawal validation by checking whether you can withdraw more than the account balance.
-5. Test you can set an amount over which you can exceed the account balance.
-6. Test you cannot set a credit limit higher than the bank's allowed limit for your account.
+4. Test withdrawal functionality by verifying if a withdrawal is made this decreases the account balance correctly. - Test Done
+5. Test withdrawal validation by checking whether you can withdraw more than the account balance.
+6. Test you can set an amount over which you can exceed the account balance.
+7. Test you cannot set a credit limit higher than the bank's allowed limit for your account.
 
 
 ##### User Story 3:
@@ -34,8 +34,8 @@
 > So that I can keep track of when the transactions occurred
 
 **Tests:**
-7. Test that each transaction is recorded with the correct date and time.
-8. Test that the transactions are recorded in the correct chronological order.
+8. Test that each transaction is recorded with the correct date and time.
+9. Test that the transactions are recorded in the correct chronological order.
 
 
 ##### User Story 4:
@@ -44,8 +44,8 @@
 > So that I can review my account activity
 
 **Tests:**
-9. Test that the bank statement displays a summary of all transactions, including dates and amounts.
-10. Test that the statement is presented in a clear and understandable format.
+10. Test that the bank statement displays a summary of all transactions, including dates and amounts.
+11. Test that the statement is presented in a clear and understandable format.
 
 
 ##### User Story 5:
@@ -54,7 +54,7 @@
 > So that I can see the impact of my deposits and withdrawals.
 
 **Tests:**
-11. Test that the account balance reflects the correct total amount after multiple transactions.
+12. Test that the account balance reflects the correct total amount after multiple transactions.
 
 
 ###### Domain Model for the User Stories:
