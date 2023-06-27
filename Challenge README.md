@@ -4,6 +4,10 @@
 
 #### The below are some user stories to help me create a domain model (NB: Used ChatGPT to create the first 5 user stories quickly):
 
+#### References Section:
+Used ChatGPT for the first 5 user stories.
+Used this article to figure how to sort an array of objects by Date: https://stackoverflow.com/questions/51757994/javascript-sort-array-of-objects-by-date-then-by-time?fbclid=IwAR0uFLIIVgW6fyROf_6tjB6jk1j7SljQVIUfhR3Z3nWK9GLxwr_NvOz8DmE
+
 
 ##### User Story 1:
 > As a user 
@@ -24,18 +28,18 @@
 **Tests:**
 4. Test withdrawal functionality by verifying if a withdrawal is made this decreases the account balance correctly. - Test Done
 5. Test that you cannot withdraw more than what you have in your account. - Test Done
-6. Test you can set an amount over which you can exceed the account balance.
-7. Test you cannot set a credit limit higher than the bank's allowed limit for your account.
+6. Test you can set an amount over which you can exceed the account balance. - Beyond the scope of this exercise - do this if you have time left to spare
+7. Test you cannot set a credit limit higher than the bank's allowed limit for your account. - Beyond the scope of this exercise - do this if you have time left to spare
 
 
 ##### User Story 3:
 > As a user 
 > I want the bank to record the date of each transaction
-> So that I can keep track of when the transactions occurred
+> So that I can keep track of when the transactions occurred.
 
 **Tests:**
-8. Test that each transaction is recorded with the correct date and time.
-9. Test that the transactions are recorded in the correct chronological order.
+8. Test that each transaction is recorded with the correct date. - Test Done
+9. Test that the transactions are recorded in the correct chronological order. - Test Done
 
 
 ##### User Story 4:
@@ -61,7 +65,7 @@
 
 | Objects                  | Properties                                  | Message                              | Output           |
 | ------------------------ | ------------------------------------------- | ------------------------------------ | ---------------- |
-| Account                  | transactionList @Array@Array[@Transaction]  | processTransaction(@Transaction)     | @Void            |
+| Account                  | transactionList @Array[@Transaction]        | processTransaction(@Transaction)     | @Void            |
 |                          | balance @Integer                            |                                      | @Number          |
 | Transaction              |                                             | getTransactionType()                 | @transactionType |
 |                          |                                             | getAmount()                          | @Number          |

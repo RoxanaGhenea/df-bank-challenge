@@ -2,9 +2,10 @@ import transactionType from "./transactionType.js";
 
 class Transaction {
 
-    constructor(amount, transactType = transactionType.deposit) {
+    constructor(amount, date, transactType = transactionType.deposit) {
         this.amount = amount;
         this.transactType = transactType;
+        this.date = date;
     }
 
     getAmount() {
@@ -16,7 +17,11 @@ class Transaction {
     }
 
     getTransactionType() {
-        return this.transactType
+        return this.transactType;
+    }
+
+    getDate() {
+        return this.date;
     }
 
 }
