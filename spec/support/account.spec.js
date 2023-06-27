@@ -9,7 +9,7 @@ describe('Bank Challenge - Account Tests:', () => {
         const transactionAmount = new Transaction(10.00);
         const deposit = 10.00;
         // When this happens
-        balance.includeTransaction(transactionAmount)
+        balance.includeTransaction(transactionAmount);
         const actualBalance = balance.getBalance();
         // Expect this
         expect(actualBalance).toEqual(deposit);
@@ -18,10 +18,10 @@ describe('Bank Challenge - Account Tests:', () => {
     it("Test if the system handles invalid amounts such as negative amounts", () => {
         // Given that
         const balance = new Account();
-        const deposit = -10.00
+        const deposit = -10.00;
         const transactionAmount = new Transaction(deposit);
         // When this happens
-        balance.includeTransaction(transactionAmount)
+        balance.includeTransaction(transactionAmount);
         const actualBalance = balance.getBalance();
         // Expect this
         expect(actualBalance).toEqual(0.00);
@@ -30,7 +30,7 @@ describe('Bank Challenge - Account Tests:', () => {
     it("Test if the system handles invalid amounts such as strings.", () => {
         // Given that
         const balance = new Account();
-        const deposit = -10.00
+        const deposit = 'stakhda';
         const transactionAmount = new Transaction(deposit);
         // When this happens
         balance.includeTransaction(transactionAmount)

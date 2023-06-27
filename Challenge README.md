@@ -13,7 +13,7 @@
 **Tests:**
 1. Test that the Transaction's constructor works correctly - Test Done
 2. Test deposit functionality by verifying if a deposit is made this increases the account balance correctly. - Test Done
-3. Test deposit validation by verifying if the system handles invalid amounts such as negative amounts or strings. - 
+3. Test deposit validation by verifying if the system handles invalid amounts such as negative amounts or strings. - Tests Done
 
 
 ##### User Story 2:

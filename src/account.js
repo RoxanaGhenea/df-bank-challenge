@@ -8,7 +8,7 @@ class Account {
     }
 
     transactionValidator(transaction) {
-        return transaction.getAmount() <= 0;
+        return (transaction.getAmount() <= 0 || typeof (transaction.getAmount()) === "string");
     }
 
     getBalance() {
