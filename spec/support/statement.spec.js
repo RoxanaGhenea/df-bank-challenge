@@ -1,4 +1,7 @@
+import Account from "../../src/account.js";
 import Statement from "../../src/statement.js";
+import Transaction from "../../src/transaction.js";
+import transactionType from "../../src/transactionType.js";
 
 describe("Bank Challenge - Statement Tests:", () => {
 
@@ -12,4 +15,6 @@ describe("Bank Challenge - Statement Tests:", () => {
         // Expect this:
         expect(console.log).toHaveBeenCalledWith(header);
     })
+
 })
+
