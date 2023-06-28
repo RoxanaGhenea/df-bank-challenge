@@ -7,6 +7,7 @@
 #### References Section:
 Used ChatGPT for the first 5 user stories.
 Used this article to figure how to sort an array of objects by Date: https://stackoverflow.com/questions/51757994/javascript-sort-array-of-objects-by-date-then-by-time?fbclid=IwAR0uFLIIVgW6fyROf_6tjB6jk1j7SljQVIUfhR3Z3nWK9GLxwr_NvOz8DmE
+Used this article to see how to test the console log output: https://stackoverflow.com/questions/19825020/how-can-i-use-jasmine-js-to-test-for-console-output
 
 
 ##### User Story 1:
@@ -48,8 +49,8 @@ Used this article to figure how to sort an array of objects by Date: https://sta
 > So that I can review my account activity
 
 **Tests:**
-10. Test that the bank statement displays a summary of all transactions, including dates and amounts.
-11. Test that the statement is presented in a clear and understandable format.
+10. Test that your statement header prints correctly. - Test Done
+11. Test that the bank statement displays a summary of all transactions, including dates and amounts.
 
 
 ##### User Story 5:
