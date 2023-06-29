@@ -13,6 +13,15 @@
   "author": "Roxana",
   "license": "ISC",
   "dependencies": {
-    "jasmine": "^5.0.2"
-  }
+    "jasmine": "^5.0.2",
+    "node": "^20.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoxanaGhenea/bank-challenge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RoxanaGhenea/bank-challenge/issues"
+  },
+  "homepage": "https://github.com/RoxanaGhenea/bank-challenge#readme"
 }
