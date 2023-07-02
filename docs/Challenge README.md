@@ -8,8 +8,7 @@
 Used ChatGPT for the first 5 user stories.
 Used this article to figure how to sort an array of objects by Date: https://stackoverflow.com/questions/51757994/javascript-sort-array-of-objects-by-date-then-by-time?fbclid=IwAR0uFLIIVgW6fyROf_6tjB6jk1j7SljQVIUfhR3Z3nWK9GLxwr_NvOz8DmE
 Used this article to see how to test the console log output: https://stackoverflow.com/questions/19825020/how-can-i-use-jasmine-js-to-test-for-console-output
-Used these articles to create the table as per requirements: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd.
-
+Used these articles to create the table as per requirements: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd and https://talyian.github.io/ansicolors/?fbclid=IwAR3NGxrdNlM-7NbADARs7JRk74dbX3nv7wkp9ah95YCOMo5vkvWXWNyCstI
 
 ##### User Story 1:
 > As a user 
@@ -50,7 +49,7 @@ Used these articles to create the table as per requirements: https://developer.m
 > So that I can review my account activity
 
 **Tests:**
-10. Test that your statement header prints correctly. - 
+10. Test that your statement header prints correctly. - Test Done
 11. Test that the bank statement displays a summary of all transactions, including dates and amounts.
 
 
@@ -60,7 +59,7 @@ Used these articles to create the table as per requirements: https://developer.m
 > So that I can see the impact of my deposits and withdrawals.
 
 **Tests:**
-12. Test that the account balance reflects the correct total amount after multiple transactions.
+12. Test that the account balance reflects the correct total amount after multiple transactions. - Test Done
 
 
 ###### Domain Model for the User Stories:
@@ -73,7 +72,11 @@ Used these articles to create the table as per requirements: https://developer.m
 |               |                                      | getAmount()                       | @Number          |
 |               |                                      | getDate()                         | @Date            |
 |               | transactionType @String              |                                   | @String          |
-| Statement     |                                      |                                   | @Void            |
+| Statement     |                                      | printHeader()                     | @String          |
+|               |                                      | formatTextToRed()                 | @Void            |
+|               |                                      | formatTextToGreen()               | @Void            |
+|               |                                      | statementBody(@Account)           | @String          |
+
 
 
 
