@@ -6,7 +6,7 @@ class Account {
     #transactionList = [];
 
     includeTransaction(transaction) {
-        if (!this.transactionValidator(transaction)) {
+        if (this.transactionValidator(transaction)) {
             this.calculationValidator(transaction);
             this.#transactionList.push(transaction);
         }
@@ -16,13 +16,17 @@ class Account {
         if (transaction.getTransactionType() === transactionType.deposit) {
             this.#balance += transaction.getAmount();
         }
-        if (transaction.getTransactionType() === transactionType.withdraw && transaction.getAmount() <= this.#limit + this.#balance) {
+        if (transaction.getTransactionType() === transactionType.withdraw) {
             this.#balance -= transaction.getAmount();
         }
     }
 
+    withdrawTransactionValidator(transaction) {
+        return transaction.getTransactionType() !== transactionType.withdraw || transaction.getAmount() <= this.#limit + this.#balance;
+    }
+
     transactionValidator(transaction) {
-        return (transaction.getAmount() <= 0 || typeof (transaction.getAmount()) === "string");
+        return transaction.getAmount() > 0 && typeof (transaction.getAmount()) !== "string" && this.withdrawTransactionValidator(transaction);
     }
 
     getBalance() {
@@ -30,8 +34,7 @@ class Account {
     }
 
     getTransactionList() {
-        this.#transactionList.sort((a, b) => b.getDate().localeCompare(a.getDate()));
-        return this.#transactionList;
+        return this.#transactionList.sort((a, b) => b.getDate().localeCompare(a.getDate()));
     }
 }
 

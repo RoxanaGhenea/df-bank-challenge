@@ -2,7 +2,6 @@ import Transaction from "../../src/transaction.js";
 
 describe('Bank Challenge - Transaction Tests:', () => {
 
-    //User story 1 test 1
     it("Should call Transaction's getDepositAmount() method", () => {
         // Given that
         const transaction = new Transaction(10.00);
@@ -13,7 +12,6 @@ describe('Bank Challenge - Transaction Tests:', () => {
         expect(actual).toEqual(deposit);
     });
 
-    //User story 3 test 8
     it("Test that each transaction is recorded with the correct date.", () => {
         // Given that
         const deposit1 = 50;

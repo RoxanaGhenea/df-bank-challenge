@@ -8,6 +8,7 @@
 Used ChatGPT for the first 5 user stories.
 Used this article to figure how to sort an array of objects by Date: https://stackoverflow.com/questions/51757994/javascript-sort-array-of-objects-by-date-then-by-time?fbclid=IwAR0uFLIIVgW6fyROf_6tjB6jk1j7SljQVIUfhR3Z3nWK9GLxwr_NvOz8DmE
 Used this article to see how to test the console log output: https://stackoverflow.com/questions/19825020/how-can-i-use-jasmine-js-to-test-for-console-output
+Used these articles to create the table as per requirements: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd.
 
 
 ##### User Story 1:
@@ -49,7 +50,7 @@ Used this article to see how to test the console log output: https://stackoverfl
 > So that I can review my account activity
 
 **Tests:**
-10. Test that your statement header prints correctly. - Test Done
+10. Test that your statement header prints correctly. - 
 11. Test that the bank statement displays a summary of all transactions, including dates and amounts.
 
 
@@ -64,15 +65,17 @@ Used this article to see how to test the console log output: https://stackoverfl
 
 ###### Domain Model for the User Stories:
 
-| Objects                  | Properties                                  | Message                              | Output           |
-| ------------------------ | ------------------------------------------- | ------------------------------------ | ---------------- |
-| Account                  | transactionList @Array[@Transaction]        | processTransaction(@Transaction)     | @Void            |
-|                          | balance @Integer                            |                                      | @Number          |
-| Transaction              |                                             | getTransactionType()                 | @transactionType |
-|                          |                                             | getAmount()                          | @Number          |
-|                          |                                             | getDate()                            | @Date            |
-|                          | transactionType @String                     |                                      | @String          |
-| Statement                |                                             |                                      | @Void            |
+| Objects       | Properties                           | Message                           | Output           |
+| ------------- | ------------------------------------ | --------------------------------- | ---------------- |
+| Account       | transactionList @Array[@Transaction] | includeTransaction(@Transaction)  | @Void            |
+|               | balance @Integer                     |                                   | @Number          |
+| Transaction   |                                      | getTransactionType()              | @transactionType |
+|               |                                      | getAmount()                       | @Number          |
+|               |                                      | getDate()                         | @Date            |
+|               | transactionType @String              |                                   | @String          |
+| Statement     |                                      |                                   | @Void            |
+
+
 
 
 
