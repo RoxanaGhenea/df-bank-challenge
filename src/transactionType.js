@@ -1,6 +1,6 @@
 const transactionType = Object.freeze({
-    withdraw: "Withdraw amount",
-    deposit: "Deposit amount"
+    withdraw: "Withdraw",
+    deposit: "Deposit"
 });
 
 export default transactionType;

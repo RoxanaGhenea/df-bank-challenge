@@ -1,5 +1,4 @@
 import Account from "../../src/account.js";
-import transactionType from "../../src/transactionType.js";
 
 describe('Bank Challenge - Account Tests:', () => {
     let balance;
@@ -11,7 +10,8 @@ describe('Bank Challenge - Account Tests:', () => {
         // Given that
         const transactionAmount = {
             getAmount: () => 10.00,
-            getTransactionType: () => transactionType.deposit
+            isDeposit: () => true,
+            isWithdrawal: () => false
         };
         const deposit = 10.00;
         // When this happens
@@ -26,7 +26,8 @@ describe('Bank Challenge - Account Tests:', () => {
         const deposit = -10.00;
         const transactionAmount = {
             getAmount: () => -10.00,
-            getTransactionType: () => transactionType.deposit
+            isDeposit: () => true,
+            isWithdrawal: () => false
         };
         // When this happens
         balance.includeTransaction(transactionAmount);
@@ -40,7 +41,8 @@ describe('Bank Challenge - Account Tests:', () => {
         const deposit = 'stakhda';
         const transactionAmount = {
             getAmount: () => deposit,
-            getTransactionType: () => transactionType.deposit
+            isDeposit: () => true,
+            isWithdrawal: () => false
         };;
         // When this happens
         balance.includeTransaction(transactionAmount);
@@ -55,11 +57,13 @@ describe('Bank Challenge - Account Tests:', () => {
         const withdraw = 50.00;
         const transactionAmount1 = {
             getAmount: () => 100.00,
-            getTransactionType: () => transactionType.deposit
+            isDeposit: () => true,
+            isWithdrawal: () => false
         };
         const transactionAmount2 = {
             getAmount: () => 50.00,
-            getTransactionType: () => transactionType.withdraw
+            isDeposit: () => false,
+            isWithdrawal: () => true
         };
         // When this happens
         balance.includeTransaction(transactionAmount1);
@@ -74,7 +78,8 @@ describe('Bank Challenge - Account Tests:', () => {
         const withdraw = 50.00;
         const transactionAmount = {
             getAmount: () => 50.00,
-            getTransactionType: () => transactionType.withdraw
+            isDeposit: () => false,
+            isWithdrawal: () => true
         };
         // When this happens
         balance.includeTransaction(transactionAmount);
@@ -83,7 +88,7 @@ describe('Bank Challenge - Account Tests:', () => {
         expect(actualBalance).toEqual(0.00);
     });
 
-    it("Test that the transactions are recorded in the correct chronological order, from most recent to oldest transaction", () => {
+    it("Test that the transactions are recorded in the correct chronological order, from to oldest to most recent transaction", () => {
         // Given that
         const account = balance;
         const deposit1 = 100.00;
@@ -94,24 +99,27 @@ describe('Bank Challenge - Account Tests:', () => {
         const date3 = new Date(Date.UTC(2012, 0, 13)).toLocaleDateString("en-GB");
         const transactionAmount1 = {
             getAmount: () => 100.00,
-            getTransactionType: () => transactionType.deposit,
+            isDeposit: () => true,
+            isWithdrawal: () => false,
             getDate: () => date1
         };
         const transactionAmount2 = {
             getAmount: () => 150.00,
-            getTransactionType: () => transactionType.deposit,
+            isDeposit: () => true,
+            isWithdrawal: () => false,
             getDate: () => date2
         };
         const transactionAmount3 = {
             getAmount: () => 50.00,
-            getTransactionType: () => transactionType.withdraw,
+            isDeposit: () => false,
+            isWithdrawal: () => true,
             getDate: () => date3
         };
         // When this happens
         account.includeTransaction(transactionAmount1);
         account.includeTransaction(transactionAmount2);
         account.includeTransaction(transactionAmount3);
-        const transactionArray = [transactionAmount2, transactionAmount3, transactionAmount1];
+        const transactionArray = [transactionAmount1, transactionAmount3, transactionAmount2]
         const actualArray = account.getTransactionList();
         // Expect this
         expect(actualArray).toEqual(transactionArray);

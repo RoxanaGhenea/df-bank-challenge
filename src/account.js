@@ -1,5 +1,3 @@
-import transactionType from "./transactionType.js";
-
 class Account {
     #balance = 0.00;
     #limit = 0.00;
@@ -13,16 +11,16 @@ class Account {
     }
 
     calculationValidator(transaction) {
-        if (transaction.getTransactionType() === transactionType.deposit) {
+        if (transaction.isDeposit()) {
             this.#balance += transaction.getAmount();
         }
-        if (transaction.getTransactionType() === transactionType.withdraw) {
+        if (transaction.isWithdrawal()) {
             this.#balance -= transaction.getAmount();
         }
     }
 
     withdrawTransactionValidator(transaction) {
-        return transaction.getTransactionType() !== transactionType.withdraw || transaction.getAmount() <= this.#limit + this.#balance;
+        return !transaction.isWithdrawal() || transaction.getAmount() <= this.#limit + this.#balance;
     }
 
     transactionValidator(transaction) {
@@ -34,7 +32,7 @@ class Account {
     }
 
     getTransactionList() {
-        return this.#transactionList.sort((a, b) => b.getDate().localeCompare(a.getDate()));
+        return this.#transactionList.sort((a, b) => a.getDate().localeCompare(b.getDate()));
     }
 }
 

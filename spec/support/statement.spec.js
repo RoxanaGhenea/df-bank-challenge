@@ -1,5 +1,4 @@
 import Statement from "../../src/statement.js";
-import transactionType from "../../src/transactionType.js";
 
 describe("Bank Challenge - Statement Tests:", () => {
 
@@ -13,9 +12,9 @@ describe("Bank Challenge - Statement Tests:", () => {
         expect(consoleOutput).toHaveBeenCalledWith(header);
     });
 
-    it("Test that your statement displays a summary of all transactions, including dates and amounts.", () => {
+    it("Test that your statement displays a summary of all transactions, including dates and amounts formatted correctly.", () => {
         // Given that:
-        const statementBody = '14/01/2012 ||         || \x1b[31m500.00\x1b[0m || \x1b[32m2500.00\x1b[0m\n' +
+        const statement =     '14/01/2012 ||         || \x1b[31m500.00\x1b[0m || \x1b[32m2500.00\x1b[0m\n' +
                               '13/01/2012 || \x1b[32m2000.00\x1b[0m ||        || \x1b[32m3000.00\x1b[0m\n' +
                               '10/01/2012 || \x1b[32m1000.00\x1b[0m ||        || \x1b[32m1000.00\x1b[0m'
 
@@ -25,29 +24,32 @@ describe("Bank Challenge - Statement Tests:", () => {
         
         const transactionAmount1 = {
             getAmount: () => 1000.00,
-            getTransactionType: () => transactionType.deposit,
+            isDeposit: () => true,
+            isWithdrawal: () => false,
             getDate: () => date1
         };
         const transactionAmount2 = {
             getAmount: () => 2000.00,
-            getTransactionType: () => transactionType.deposit,
+            isDeposit: () => true,
+            isWithdrawal: () => false,
             getDate: () => date2
         };
         const transactionAmount3 = {
             getAmount: () => 500.00,
-            getTransactionType: () => transactionType.withdraw,
+            isDeposit: () => false,
+            isWithdrawal: () => true,
             getDate: () => date3
         };
         
         const account = {
-            getTransactionList: () => [transactionAmount3, transactionAmount2, transactionAmount1]
+            getTransactionList: () => [transactionAmount1, transactionAmount2, transactionAmount3]
         };
 
         const consoleOutput = spyOn(console, "log");
         // When this happens:
         Statement.statementBody(account);
         // Expect this:
-        expect(consoleOutput).toHaveBeenCalledWith(statementBody);
+        expect(consoleOutput).toHaveBeenCalledWith(statement);
     });
 })
 

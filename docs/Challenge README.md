@@ -50,7 +50,7 @@ Used these articles to create the table as per requirements: https://developer.m
 
 **Tests:**
 10. Test that your statement header prints correctly. - Test Done
-11. Test that the bank statement displays a summary of all transactions, including dates and amounts.
+11. Test that the bank statement displays a summary of all transactions, including dates and amounts formatted correctly. - Test Done
 
 
 ##### User Story 5:
@@ -59,7 +59,7 @@ Used these articles to create the table as per requirements: https://developer.m
 > So that I can see the impact of my deposits and withdrawals.
 
 **Tests:**
-12. Test that the account balance reflects the correct total amount after multiple transactions. - Test Done
+12. Test that the account balance reflects the correct total amount after multiple transactions. - 
 
 
 ###### Domain Model for the User Stories:

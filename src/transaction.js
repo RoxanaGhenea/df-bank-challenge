@@ -16,13 +16,18 @@ class Transaction {
         this.transactType = type;
     }
 
-    getTransactionType() {
-        return this.transactType;
-    }
-
     getDate() {
         return this.date;
     }
+
+    isDeposit() {
+        return this.transactType === transactionType.deposit;
+    }
+
+    isWithdrawal() {
+        return this.transactType === transactionType.withdraw;
+    }
+
 
 }
 
