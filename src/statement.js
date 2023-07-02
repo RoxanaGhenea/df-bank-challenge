@@ -1,6 +1,6 @@
 class Statement {
     static printHeader() {
-        console.log("date       || credit  || debit  || balance")
+        console.log('date       || credit  || debit  || balance');
     }
 
     static formatTextToRed (value) {
@@ -16,12 +16,12 @@ class Statement {
     }
 
     static getCredit(transaction) {
-        let credit = transaction.isDeposit() ? this.formatTextToGreen(transaction.getAmount().toFixed(2).toString()) : " ";
+        let credit = transaction.isDeposit() ? this.formatTextToGreen(transaction.getAmount().toFixed(2).toString()) : ' ';
         return credit;
     }
     
     static getDebit(transaction) {
-        let debit = transaction.isWithdrawal() ? this.formatTextToRed(transaction.getAmount().toFixed(2).toString()) : " ";
+        let debit = transaction.isWithdrawal() ? this.formatTextToRed(transaction.getAmount().toFixed(2).toString()) : ' ';
         return debit;
     }
 

@@ -1,4 +1,4 @@
-import transactionType from "./transactionType.js";
+import transactionType from './transactionType.js';
 
 class Transaction {
 

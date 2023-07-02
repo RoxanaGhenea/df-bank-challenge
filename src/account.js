@@ -24,7 +24,7 @@ class Account {
     }
 
     transactionValidator(transaction) {
-        return transaction.getAmount() > 0 && typeof (transaction.getAmount()) !== "string" && this.withdrawTransactionValidator(transaction);
+        return transaction.getAmount() > 0 && typeof (transaction.getAmount()) !== 'string' && this.withdrawTransactionValidator(transaction);
     }
 
     getBalance() {
